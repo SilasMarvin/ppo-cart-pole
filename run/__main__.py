@@ -20,7 +20,7 @@ class Model(tf.keras.Model):
         self.critic2 = tf.keras.layers.Dense(1, activation=None)
         self.actor1 = tf.keras.layers.Dense(32, activation='relu')
         self.actor2 = tf.keras.layers.Dense(2, activation=tf.keras.activations.softmax)
-        self.optimizer = tf.keras.optimizers.Adam(learning_rate=7e-3, epsilon=1e-5)
+        self.optimizer = tf.keras.optimizers.Adam(learning_rate=1e-3, epsilon=1e-5)
 
     def call(self, inputs):
         shared = self.shared2(self.shared1(inputs))
